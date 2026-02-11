@@ -5,67 +5,102 @@
 }
 
 body {
-    font-family: Arial, sans-serif;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
     color: white;
+    overflow: hidden;
 }
 
 .game-container {
     text-align: center;
-    background: rgba(0, 0, 0, 0.3);
+    background: rgba(0, 0, 0, 0.4);
     padding: 20px;
-    border-radius: 15px;
-    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    backdrop-filter: blur(15px);
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+    max-width: 450px;
+    width: 90%;
+}
+
+.game-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+    padding: 10px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
 }
 
 .score-container {
     display: flex;
-    justify-content: space-between;
-    margin-bottom: 15px;
-    font-size: 18px;
+    gap: 20px;
+    font-size: 16px;
     font-weight: bold;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+}
+
+.menu-btn {
+    background: linear-gradient(45deg, #4a69bd, #1e3799);
+    padding: 8px 15px;
+    font-size: 14px;
+    border-radius: 20px;
+    border: none;
+    color: white;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.menu-btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 5px 15px rgba(74, 105, 189, 0.4);
 }
 
 #gameCanvas {
     border: 3px solid #fff;
-    border-radius: 10px;
-    background: #000;
+    border-radius: 15px;
+    background: radial-gradient(ellipse at center, #001122 0%, #000000 100%);
     display: block;
     margin: 0 auto;
     touch-action: none;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
 }
 
 .controls {
     margin-top: 20px;
     display: flex;
-    gap: 10px;
+    gap: 15px;
     justify-content: center;
 }
 
 button {
-    padding: 12px 24px;
+    padding: 15px 25px;
     font-size: 16px;
     font-weight: bold;
     border: none;
-    border-radius: 8px;
+    border-radius: 50px;
     background: linear-gradient(45deg, #ff6b6b, #ee5a24);
     color: white;
     cursor: pointer;
     transition: all 0.3s ease;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    text-transform: uppercase;
+    letter-spacing: 1px;
 }
 
 button:hover {
-    transform: translateY(-2px);
+    transform: translateY(-3px);
     box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+    background: linear-gradient(45deg, #ee5a24, #ff6b6b);
 }
 
 button:active {
-    transform: translateY(0);
+    transform: translateY(-1px);
 }
 
 button:disabled {
@@ -73,9 +108,42 @@ button:disabled {
     cursor: not-allowed;
 }
 
+.game-info {
+    margin-top: 15px;
+    padding: 10px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    font-size: 14px;
+    color: #ccc;
+}
+
+.stars {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: -1;
+}
+
+.star {
+    position: absolute;
+    width: 2px;
+    height: 2px;
+    background: white;
+    border-radius: 50%;
+    animation: twinkle 3s infinite;
+}
+
+@keyframes twinkle {
+    0%, 100% { opacity: 0; }
+    50% { opacity: 1; }
+}
+
 @media (max-width: 480px) {
     .game-container {
-        padding: 10px;
+        padding: 15px;
         margin: 10px;
     }
     
@@ -92,5 +160,10 @@ button:disabled {
     
     button {
         width: 200px;
+    }
+    
+    .game-header {
+        flex-direction: column;
+        gap: 10px;
     }
 }

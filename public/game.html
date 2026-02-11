@@ -3,21 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Juego de Nave Espacial</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Space Shooter - Juego</title>
+    <link rel="stylesheet" href="game-style.css">
 </head>
 <body>
     <div class="game-container">
-        <div class="score-container">
-            <span>Puntuación: <span id="score">0</span></span>
-            <span>Vidas: <span id="lives">3</span></span>
+        <div class="game-header">
+            <div class="score-container">
+                <span>Puntuación: <span id="score">0</span></span>
+                <span>Vidas: <span id="lives">3</span></span>
+            </div>
+            <button id="menuBtn" class="menu-btn">📋 Menú</button>
         </div>
+        
         <canvas id="gameCanvas" width="400" height="600"></canvas>
+        
         <div class="controls">
-            <button id="startBtn">Iniciar Juego</button>
-            <button id="pauseBtn">Pausar</button>
+            <button id="startBtn">🎮 Iniciar Juego</button>
+            <button id="pauseBtn">⏸️ Pausar</button>
+        </div>
+        
+        <div class="game-info">
+            <p>⬅️➡️ Mover nave | 🚀 ESPACIO para disparar</p>
         </div>
     </div>
+    
     <script src="game.js"></script>
 </body>
 </html>
