@@ -1,0 +1,21 @@
+{
+  "name": "juego-html5",
+  "version": "1.0.0",
+  "description": "Juego HTML5 para convertir a APK",
+  "main": "index.html",
+  "scripts": {
+    "start": "live-server --port=8080",
+    "build": "echo 'Build completado'",
+    "android:run": "npx cap run android",
+    "android:build": "npx cap build android"
+  },
+  "devDependencies": {
+    "live-server": "^1.2.2",
+    "typescript": "^5.9.3"
+  },
+  "dependencies": {
+    "@capacitor/android": "^5.0.0",
+    "@capacitor/cli": "^5.0.0",
+    "@capacitor/core": "^5.0.0"
+  }
+}
